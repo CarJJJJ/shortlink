@@ -6,7 +6,7 @@
 
 ​	短链接的原理非常简单，通过一个原始链接生成一个相对较短的链接，然后通过访问短链接跳转到原始链接。
 
-![截屏2024-03-05 21.40.19](/Users/carj/Library/Application Support/typora-user-images/截屏2024-03-05 21.40.19.png)
+![截屏2024-03-05 21.40.19](/readmeImages/descrpition.png)
 
 如果更细节一点的话，就是：
 
@@ -24,7 +24,7 @@
 
 **京东的短信就会出现短链。**
 
-![截屏2024-03-05 21.47.01](/Users/carj/Library/Application Support/typora-user-images/截屏2024-03-05 21.47.01.png)
+![截屏2024-03-05 21.47.01](/readmeImages/message.png)
 
 主要作用有如下几点：
 
@@ -40,7 +40,7 @@
 
 ​	采用最新的JDK17+SpringBoot&SpringCloud微服务架构，构建高并发、大数据量下仍然能够高效提供可靠的短链接生成服务。
 
-![截屏2024-03-05 21.51.40](/Users/carj/Library/Application Support/typora-user-images/截屏2024-03-05 21.51.40.png)
+![截屏2024-03-05 21.51.40](/readmeImages/architect.png)
 
 ## 项目亮点
 
