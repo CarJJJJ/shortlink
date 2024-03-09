@@ -83,6 +83,7 @@ public class UserController {
         return Results.success(userLoginRespDTO);
     }
 
+
     @GetMapping("/api/short-link/admin/v1/user/check-login")
     public Result<Boolean> checkLogin(@RequestParam("username") String username,@RequestParam("token") String token){
         return Results.success(userService.checkLogin(username,token));

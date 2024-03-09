@@ -18,7 +18,7 @@ public class UserTransmitFilter implements Filter {
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
         String requestURI = httpServletRequest.getRequestURI();
         //这样写并不规范，后期需要移动到网关
-        if(Objects.equals(requestURI,"/api/short-link/v1/user/login")){
+        if(Objects.equals(requestURI,"/api/short-link/admin/v1/user/login")){
             return;
         }
         String username = httpServletRequest.getHeader("username");

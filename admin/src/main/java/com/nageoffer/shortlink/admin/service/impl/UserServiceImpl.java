@@ -119,8 +119,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements 
     }
 
     @Override
-    public Boolean checkLogin(String username,String token) {
-        return stringRedisTemplate.opsForHash().get("login_"+username,token)!=null;
+    public Boolean checkLogin(String username, String token) {
+        return stringRedisTemplate.opsForHash().get("login_" + username, token) != null;
     }
 
     @Override
