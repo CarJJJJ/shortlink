@@ -75,7 +75,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements 
                 userRegisterCachePenetrationBloomFilter.add(requestParam.getUsername());
                 return;
             }
-            throw  new ClientException(UserErrorCodeEnum.USER_EXIST);
+            throw new ClientException(UserErrorCodeEnum.USER_EXIST);
         }finally {
             lock.unlock();
         }
