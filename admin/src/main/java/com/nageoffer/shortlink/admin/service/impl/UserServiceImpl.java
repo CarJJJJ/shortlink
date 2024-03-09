@@ -102,7 +102,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements 
         }
         Boolean hasLogin = stringRedisTemplate.hasKey("login_" + requestParam.getUsername());
         if(hasLogin != null && hasLogin){
-            throw new ClientException("用户不存在");
+            throw new ClientException("用户已登陆");
         }
         /**
          * Hash
@@ -113,7 +113,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements 
          */
         String uuid = UUID.randomUUID().toString();
         stringRedisTemplate.opsForHash().put("login_" + requestParam.getUsername(),uuid,JSON.toJSONString(userDO));
-        stringRedisTemplate.expire("login_"+requestParam.getUsername(),30L, TimeUnit.MINUTES);
+        //为了后续测试方便，设置过期时间为30天
+        stringRedisTemplate.expire("login_"+requestParam.getUsername(),30L, TimeUnit.DAYS);
         return new UserLoginRespDTO(uuid);
     }
 
