@@ -26,5 +26,6 @@ public class ShortLinkGroupRespDTO {
     /**
      * 分组下短链接数量
      */
+    // 目前这个字段还没有用远程调用查询
     private Integer shortLinkCount;
 }
