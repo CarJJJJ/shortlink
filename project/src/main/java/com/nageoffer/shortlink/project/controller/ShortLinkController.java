@@ -2,8 +2,8 @@ package com.nageoffer.shortlink.project.controller;
 
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.nageoffer.shortlink.project.convention.result.Result;
-import com.nageoffer.shortlink.project.convention.result.Results;
+import com.nageoffer.shortlink.project.common.convention.result.Result;
+import com.nageoffer.shortlink.project.common.convention.result.Results;
 import com.nageoffer.shortlink.project.dto.req.ShortLinkCreateReqDTO;
 import com.nageoffer.shortlink.project.dto.req.ShortLinkPageReqDTO;
 import com.nageoffer.shortlink.project.dto.req.ShortLinkUpdateReqDTO;
