@@ -14,6 +14,7 @@ import com.nageoffer.shortlink.admin.dto.resp.ShortLinkGroupRespDTO;
 import com.nageoffer.shortlink.admin.service.GroupService;
 import com.nageoffer.shortlink.admin.toolkit.RandomGenerator;
 import lombok.RequiredArgsConstructor;
+import org.redisson.api.RedissonClient;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,6 +26,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class GroupServiceImpl extends ServiceImpl<GroupMapper, GroupDO> implements GroupService {
 
+    private final RedissonClient redissonClient;
 
     @Override
     public void saveGroup(String groupName) {
@@ -40,16 +42,13 @@ public class GroupServiceImpl extends ServiceImpl<GroupMapper, GroupDO> implemen
                 .build();
         baseMapper.insert(groupDO);
     }
-
     @Override
     public List<ShortLinkGroupRespDTO> listGroup() {
-        // TODO 从上下文获取用户名
         LambdaQueryWrapper<GroupDO> queryWrapper = Wrappers.lambdaQuery(GroupDO.class)
                 .eq(GroupDO::getDelFlag, 0)
                 .eq(GroupDO::getUsername, UserContext.getUsername())
                 .orderByDesc(GroupDO::getSortOrder, GroupDO::getUpdateTime);
         List<GroupDO> groupDOList = baseMapper.selectList(queryWrapper);
-
         return BeanUtil.copyToList(groupDOList, ShortLinkGroupRespDTO.class);
     }
 
