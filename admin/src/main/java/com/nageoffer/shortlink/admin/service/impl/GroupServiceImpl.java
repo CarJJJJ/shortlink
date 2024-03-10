@@ -74,7 +74,7 @@ public class GroupServiceImpl extends ServiceImpl<GroupMapper, GroupDO> implemen
     }
     @Override
     public List<ShortLinkGroupRespDTO> listGroup() {
-        String username = UserContext.getUsername();
+        UserContext.getUsername()
         LambdaQueryWrapper<GroupDO> queryWrapper = Wrappers.lambdaQuery(GroupDO.class)
                 .eq(GroupDO::getDelFlag, 0)
                 .eq(GroupDO::getUsername, UserContext.getUsername())
