@@ -1,4 +1,4 @@
-package com.nageoffer.shortlink.project.util;
+package com.nageoffer.shortlink.project.toolkit;
 
 import cn.hutool.core.lang.hash.MurmurHash;
 
