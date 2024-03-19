@@ -116,7 +116,7 @@ public class UserController {
         return Results.success();
     }
 
-    @PostMapping("/api/short-link/v1/create")
+    @PostMapping("/api/short-link/admin/v1/create")
     public Result<ShortLinkCreateRespDTO> createShortLink(@RequestBody ShortLinkCreateReqDTO requestParam){
         return shortLinkRemoteService.createShortLink(requestParam);
     }
@@ -124,7 +124,7 @@ public class UserController {
     /**
      * 分页查询短链接
      */
-    @GetMapping("/api/short-link/v1/page")
+    @GetMapping("/api/short-link/admin/v1/page")
     public Result<IPage<ShortLinkPageRespDTO>> pageShortLink(ShortLinkPageReqDTO requestParam) {
         return shortLinkRemoteService.pageShortLink(requestParam);
     }
@@ -132,7 +132,7 @@ public class UserController {
     /**
      * 查询短链接分组内数量
      */
-    @GetMapping("/api/short-link/v1/count")
+    @GetMapping("/api/short-link/admin/v1/count")
     public Result<List<ShortLinkGroupCountQueryRespDTO>> listGroupShortLinkCount(@RequestParam("requestParam") List<String> requestParam) {
         return shortLinkRemoteService.listGroupShortLinkCount(requestParam);
     }
